@@ -2,7 +2,7 @@
   "name": "nuxt-external-embed",
   "version": "1.0.0",
   "description": "Nuxt.js project",
-  "author": "",
+  "author": "clementp",
   "private": true,
   "scripts": {
     "dev": "nuxt",
