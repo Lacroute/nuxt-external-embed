@@ -5,14 +5,17 @@
       <h1 class="title">
         nuxt-external-embed
       </h1>
+      <button type="button" @click="increment({term: 2})">Increment from Nuxt</button>
       <external/>
     </div>
   </section>
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 import Logo from '~/components/Logo.vue'
-import { External, myModule, NAMESPACE } from 'vue-external-component'
+import { External, myModule, NAMESPACE, INCREMENT } from 'vue-external-component'
 
 export default {
   components: {
@@ -26,6 +29,12 @@ export default {
 
   destroyed () {
     this.$store.unregisterModule(NAMESPACE)
+  },
+
+  methods: {
+    ...mapMutations(NAMESPACE, {
+      increment: INCREMENT
+    })
   }
 }
 </script>
