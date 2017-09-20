@@ -13,7 +13,8 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "nuxt": "^1.0.0-rc11"
+    "nuxt": "^1.0.0-rc11",
+    "vue-external-component": "git+https://github.com/Lacroute/vue-external-component.git"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
