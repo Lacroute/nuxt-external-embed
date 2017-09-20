@@ -15,6 +15,7 @@
 import { mapMutations } from 'vuex'
 
 import Logo from '~/components/Logo.vue'
+// Making constants is important!
 import { External, myModule, NAMESPACE, INCREMENT } from 'vue-external-component'
 
 export default {
@@ -24,14 +25,17 @@ export default {
   },
 
   created () {
+    // Connect the store from the component to the store of the Nuxt app.
     this.$store.registerModule(NAMESPACE, myModule)
   },
 
   destroyed () {
+    // Remove it before leaving.
     this.$store.unregisterModule(NAMESPACE)
   },
 
   methods: {
+    // Now, the tool is fully integrated and we can interact with.
     ...mapMutations(NAMESPACE, {
       increment: INCREMENT
     })
